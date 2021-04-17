@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const passport = require("passport");
 
 const AuthRout = require("./routes/auth");
 const AnalyticsRout = require("./routes/analytics");
@@ -9,6 +10,7 @@ const CategoryRout = require("./routes/category");
 const PositionRout = require("./routes/position");
 const OrderRout = require("./routes/order");
 
+const passportMiddleware = require("./middleware/passport");
 const KEYS = require("./config/keys");
 
 const app = express();
@@ -21,6 +23,8 @@ mongoose.connect(KEYS.DB_URI, {
 .then(() => console.log('connect DB'))
 .catch(() => console.error('connect DB error'));
 
+app.use(passport.initialize());
+passportMiddleware(passport);
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
