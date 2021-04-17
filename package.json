@@ -1,0 +1,23 @@
+{
+  "name": "crusade-mean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "express",
+    "node",
+    "mongo"
+  ],
+  "author": "Sibiya666",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  }
+}
