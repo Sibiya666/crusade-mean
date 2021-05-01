@@ -12,7 +12,7 @@ const categorySchema = new Schema({
     },
     user: {
         ref: 'users',
-        type: Scheme.Types.ObjectId,
+        type: Schema.Types.ObjectId,
     },
 });
 

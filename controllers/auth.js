@@ -60,6 +60,6 @@ module.exports.register = async (req, res) => {
         await user.save();
         res.status(201).json({ user });
     } catch (e) {
-        errorHandler.response(res, e);
+        errorHandler(res, e);
     }
 };

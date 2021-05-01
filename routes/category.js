@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 
+const uploader = require('../middleware/uploader');
 const CategoryController = require('../controllers/category');
 
 const router = express.Router();
@@ -23,11 +24,13 @@ router.delete(
 router.post(
     '/',
     passport.authenticate('jwt', { session: false }),
+    uploader.single('image'),
     CategoryController.add
 );
 router.patch(
     '/:id',
     passport.authenticate('jwt', { session: false }),
+    uploader.single('image'),
     CategoryController.updateById
 );
 

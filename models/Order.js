@@ -6,7 +6,10 @@ const orderSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    order: {},
+    order: {
+        type: Number,
+        require: true,
+    },
     list: [
         {
             name: {
