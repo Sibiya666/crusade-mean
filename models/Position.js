@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const positionSchema = new Schema({
     name: {
         type: String,
-        require: true
+        require: true,
     },
     cost: {
         type: Number,
@@ -12,12 +12,12 @@ const positionSchema = new Schema({
     },
     category: {
         ref: 'categories',
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
     },
     user: {
         ref: 'users',
-        type: Schema.Types.ObjectId
-    }
+        type: Schema.Types.ObjectId,
+    },
 });
 
-module.exports =  mongoose.model('Position', positionSchema);
+module.exports = mongoose.model('Position', positionSchema);
