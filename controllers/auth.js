@@ -10,6 +10,8 @@ const SALT_LENGTH = 10;
 
 module.exports.login = async (req, res) => {
     const { email, password } = req.body;
+    console.log(req.body);
+    console.log(email);
     const candidate = await User.findOne({ email });
 
     if (!candidate) {
@@ -19,7 +21,7 @@ module.exports.login = async (req, res) => {
 
     const isCorrectPassword = await bcrypt.compare(
         password,
-        candidate.password
+        candidate.password,
     );
 
     if (!isCorrectPassword) {
@@ -33,7 +35,7 @@ module.exports.login = async (req, res) => {
             userId: candidate._id,
         },
         KEYS.JWT,
-        { expiresIn: TIME_CONST.ONE_HOUR }
+        { expiresIn: TIME_CONST.ONE_HOUR },
     );
 
     res.status(200).json({ token: `Bearer ${token}` });
