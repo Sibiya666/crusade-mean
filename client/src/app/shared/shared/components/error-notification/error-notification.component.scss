@@ -1,0 +1,24 @@
+:host {
+    position: relative;
+
+    &._top {
+        position: absolute;
+        top: calc(var(--app-menu-height) + 20px);
+    }
+}
+.app-error-notification {
+    display: inline-block;
+    padding: var(--error-notification-padding, 12px);
+    border-radius: var(--error-notification-border-radius, 4px);
+    background-color: var(
+        --error-notification-bacground-color,
+        var(--error-color)
+    );
+
+    &__description {
+        color: var(--error-notification-description-color, #fff);
+    }
+
+
+
+}

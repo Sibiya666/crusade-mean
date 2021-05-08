@@ -3,7 +3,11 @@ export interface MenuItem {
     label: string;
 }
 
-export interface LoginUser {
+export interface Candidate {
     email: string;
-    label: string;
+    password: string;
+}
+
+export interface Jwt {
+    token: string;
 }

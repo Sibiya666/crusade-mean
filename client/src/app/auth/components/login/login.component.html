@@ -1,16 +1,25 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit($event)" class="app-login-form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="app-login-form">
     <mat-form-field class="app-login-form__field">
         <mat-label>Login</mat-label>
         <input matInput formControlName="email" />
-        <mat-error *ngIf="form.controls['email'].hasError('email') && !form.controls['login'].hasError('required')">
+        <mat-error
+            *ngIf="
+                form.controls['email'].hasError('email') &&
+                !form.controls['email'].hasError('required')
+            "
+        >
             Please enter a valid email address
         </mat-error>
-        <mat-error *ngIf="form.controls['email'].hasError('required')"> Email is <strong>required</strong> </mat-error>
+        <mat-error *ngIf="form.controls['email'].hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
     </mat-form-field>
     <mat-form-field class="app-login-form__field">
         <mat-label>Password</mat-label>
         <input formControlName="password" matInput />
-        <mat-error *ngIf="form.controls['password'].hasError('required')"> Password is <strong>required</strong> </mat-error>
+        <mat-error *ngIf="form.controls['password'].hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
         <mat-error *ngIf="form.controls['password'].hasError('minlength')">
             Min length of Password is <strong>8 symbols</strong>
         </mat-error>

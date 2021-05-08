@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,10 +12,26 @@ import { AuthComponent } from './components/auth/auth.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
-const COMPONENTS = [];
+import { SharedModule } from '../shared/shared/shared.module';
+
+const COMPONENTS = [
+    AuthComponent,
+    LoginComponent,
+    RegistrationComponent,
+    MenuComponent,
+    MenuItemComponent,
+];
 
 @NgModule({
-    declarations: [LoginComponent, RegistrationComponent, AuthComponent, MenuComponent, MenuItemComponent],
-    imports: [CommonModule, AuthRoutingModule, MatToolbarModule, MatInputModule, MatButtonModule, ReactiveFormsModule],
+    declarations: [...COMPONENTS],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        MatToolbarModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        SharedModule,
+    ],
 })
 export class LoginModule {}

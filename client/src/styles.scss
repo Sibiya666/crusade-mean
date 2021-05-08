@@ -20,7 +20,10 @@ $crusade-app-theme: mat-light-theme(
 @include angular-material-theme($crusade-app-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
+:root {
+    --error-color: #d80a0a;
+    --app-menu-height: 64px;
+}
 html,
 body {
     height: 100%;
