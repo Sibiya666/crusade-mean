@@ -10,12 +10,13 @@ const SALT_LENGTH = 10;
 
 module.exports.login = async (req, res) => {
     const { email, password } = req.body;
-    console.log(req.body);
-    console.log(email);
     const candidate = await User.findOne({ email });
 
     if (!candidate) {
-        res.status('401').json({ msg: 'user not found' });
+        res.status('401').json({
+            code: 0,
+            msg: 'user not found',
+        });
         return;
     }
 
@@ -25,7 +26,10 @@ module.exports.login = async (req, res) => {
     );
 
     if (!isCorrectPassword) {
-        res.status('401').json({ msg: 'password error' });
+        res.status('401').json({
+            code: 0,
+            msg: 'password error',
+        });
         return;
     }
 
@@ -38,7 +42,11 @@ module.exports.login = async (req, res) => {
         { expiresIn: TIME_CONST.ONE_HOUR },
     );
 
-    res.status(200).json({ token: `Bearer ${token}` });
+    res.status(200).json({
+        code: 1,
+        msg: 'Login succes',
+        token: `Bearer ${token}`,
+    });
 };
 
 module.exports.register = async (req, res) => {
@@ -48,6 +56,7 @@ module.exports.register = async (req, res) => {
     if (candidate) {
         res.status(409).json({
             msg: 'This email is busy.',
+            code: 0,
         });
         return;
     }
@@ -60,7 +69,10 @@ module.exports.register = async (req, res) => {
 
     try {
         await user.save();
-        res.status(201).json({ user });
+        res.status(201).json({
+            msg: 'RegisterSuccess.',
+            code: 1,
+        });
     } catch (e) {
         errorHandler(res, e);
     }

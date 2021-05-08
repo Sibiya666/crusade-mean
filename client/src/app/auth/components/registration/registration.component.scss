@@ -1,0 +1,27 @@
+:host {
+    position: relative;
+    display: block;
+
+    .app-login-form {
+        padding-top: 25%;
+    }
+}
+
+.app-login-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 12px;
+    margin: var(--app-login-form-margin, auto);
+    width: var(--app-login-form-width, 400px);
+
+    &__field {
+        width: 100%;
+    }
+}
+
+.app-error-notification {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
