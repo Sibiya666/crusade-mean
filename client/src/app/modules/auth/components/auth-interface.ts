@@ -8,6 +8,4 @@ export interface Candidate {
     password: string;
 }
 
-export interface Jwt {
-    token: string;
-}
+

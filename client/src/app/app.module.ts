@@ -6,7 +6,7 @@ import { PortalModule } from '@angular/cdk/portal';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing.module';
-import { AuthErrorInterceptor } from './core/Interceptor/erro.interceptor';
+import { AuthErrorInterceptor } from './core/interceptor/auth-error.interceptor';
 
 import { NgxsModule } from '@ngxs/store';
 
