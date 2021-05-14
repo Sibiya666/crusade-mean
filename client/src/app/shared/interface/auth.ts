@@ -2,4 +2,4 @@ export interface Jwt {
     token: string;
 }
 
-export const TOKENT_KEY = 'token';
+export const AUTH_TOKENT_KEY = 'auth-token';
