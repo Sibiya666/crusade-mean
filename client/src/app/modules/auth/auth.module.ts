@@ -12,7 +12,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
-import { SharedModule } from '../shared/shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 const COMPONENTS = [
     AuthComponent,
