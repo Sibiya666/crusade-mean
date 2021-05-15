@@ -13,8 +13,6 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
-
 const COMPONENTS = [
     AuthComponent,
     LoginComponent,

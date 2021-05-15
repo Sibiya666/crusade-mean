@@ -3,8 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, timer } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
+import { AuthService } from 'src/app/shared/services';
 
-import { AuthService } from '../../auth.service';
+
 import { MIN_LENGTH_OF_EMAIL, MIN_LENGTH_OF_PASSWORD } from '../auth-constant';
 
 @Component({

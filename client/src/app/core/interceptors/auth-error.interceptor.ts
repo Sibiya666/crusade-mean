@@ -26,7 +26,7 @@ export class AuthErrorInterceptor implements HttpInterceptor {
                 this.dynamicComponentService.open<ErrorNotificationComponent>(
                     ErrorNotificationComponent,
                     {
-                        errorMsg: response.error.msg,
+                        errorMsg: response?.error?.msg,
                         isVisible: true,
                         isTop: true
                     },

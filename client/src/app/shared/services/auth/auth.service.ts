@@ -4,9 +4,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { Jwt } from 'src/app/shared/interface/auth';
+import { Candidate, Jwt } from 'src/app/shared/interface/auth';
 import { ActionResponseApi } from 'src/app/shared/interface/response';
-import { Candidate } from './components/auth-interface';
 
 @Injectable({
     providedIn: 'root',

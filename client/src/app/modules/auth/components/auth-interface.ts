@@ -3,9 +3,3 @@ export interface MenuItem {
     label: string;
 }
 
-export interface Candidate {
-    email: string;
-    password: string;
-}
-
-

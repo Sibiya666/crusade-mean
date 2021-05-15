@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../../auth.service';
 import { MIN_LENGTH_OF_EMAIL, MIN_LENGTH_OF_PASSWORD } from '../auth-constant';
+import { AuthService } from 'src/app/shared/services';
 
 import { Subject, timer } from 'rxjs';
 import { tap, takeUntil } from 'rxjs/operators';

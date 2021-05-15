@@ -7,11 +7,10 @@ import { PortalModule } from '@angular/cdk/portal';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing.module';
 
-
 import { NgxsModule } from '@ngxs/store';
 import { AuthErrorInterceptor } from './core/interceptors/auth-error.interceptor';
 import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor';
-
+import { LayoutModule } from './modules/layout/layout.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -23,6 +22,7 @@ import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor
         HttpClientModule,
         NgxsModule.forRoot(),
         PortalModule,
+        LayoutModule,
     ],
     providers: [
         {
